@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: #0f1424;
+  color: #e8ebf5;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+}
+
+.filter-btn,
+.discount-btn {
+  padding: 10px 18px;
+  border-radius: 24px;
+  border: 1px solid #2a3252;
+  background: #171d33;
+  color: #e8ebf5;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.filter-btn:hover,
+.discount-btn:hover {
+  border-color: #7c8cff;
+}
+
+.filter-btn.active {
+  background: #7c8cff;
+  border-color: #7c8cff;
+  color: #0f1424;
+  font-weight: bold;
+}
+
+.discount-btn {
+  border-color: #ffc53d;
+  color: #ffc53d;
+}
+
+.discount-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #171d33;
+  border: 1px solid #2a3252;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-wrap {
+  position: relative;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #b0425a;
+  color: white;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.category {
+  color: #7c8cff;
+  font-size: 12px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.description {
+  margin: 0;
+  font-size: 13px;
+  color: #a9b0c9;
+  flex: 1;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.rating {
+  color: #ffc53d;
+  font-size: 14px;
+}
+
+.sold-out {
+  opacity: 0.6;
+}
+
+.sold-out .img-wrap img {
+  filter: grayscale(100%);
+}
